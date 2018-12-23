@@ -1,0 +1,95 @@
+/*
+.teste
+{
+	display: none;
+}
+*/
+
+.fGraphContent
+{
+	width: auto;
+	height: 450px;
+	overflow: hidden;
+}
+.fGraphTitle
+{
+	width: auto;
+	height: 50px;
+}
+
+.fPlot
+{
+	/* W3schools ref */
+	display: -webkit-flex; /* Safari */
+	-webkit-flex-direction: row; /* Safari 6.1+ */
+	display: flex;
+	flex-direction: row;
+}
+
+.fLegend
+{
+	display: inline;
+}
+
+.resize
+{
+	position: initial!important;
+}
+
+.fGraphFooter
+{
+	bottom: 40px;
+	left: 24px;
+	position: fixed;
+}
+.CodeMirror
+{
+	height: 100%!important;
+	width: 100%!important;
+}
+
+.resize-vertical
+{
+	overflow: hidden;
+}
+
+.cm-s-material
+{
+	min-height: 120px;
+	height: 100%!important;
+	width: 100%!important;;
+}
+
+.CodeMirror-focused
+{
+	min-height: 120px;
+	height: 100%!important;
+	width: 100%!important;
+}
+
+.react-codemirror2 
+{
+	min-height: 120px;
+	height: 100%!important;
+	width: 100%!important;
+}
+
+.CodeMirror-scroll
+{
+	min-height: 120px;
+	height: 100%!important;
+	width: 100%!important;
+}
+
+.CodeMirror-vscrollbar
+{
+	min-height: 120px;
+	height: 100%!important;
+	width: 100%!important;
+}
+
+.CodeMirror-hscrollbar
+{
+	overflow: auto;
+} 
+

@@ -1,0 +1,35 @@
+{
+  "name": "graphic-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "codemirror": "^5.42.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "highcharts": "^6.2.0",
+    "morgan": "^1.9.1",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-codemirror2": "^5.1.0",
+    "react-dom": "^16.6.3",
+    "react-resize-layout": "^0.2.3",
+    "react-scripts": "2.1.1",
+    "react-vis": "^1.11.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
