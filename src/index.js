@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 import { Resize, ResizeVertical } from "react-resize-layout";
 
-import {UnControlled as CodeMirror} from 'react-codemirror2'
+import {UnControlled as CodeMirror} from 'react-codemirror2';
 
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
@@ -26,6 +26,8 @@ import
 	DiscreteColorLegend
 }
 from 'react-vis';
+
+var fjson=require('comment-json');
 
 require('codemirror/mode/javascript/javascript');
 
@@ -62,7 +64,8 @@ class FFooter extends React.Component
 		var x=null;
 		try
 		{
-			x=JSON.parse(this.props.fGraphicCode);
+			//x=JSON.parse(this.props.fGraphicCode);
+			x=fjson.parse(this.props.fGraphicCode);
 		}
 		catch (err)
 		{
