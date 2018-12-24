@@ -59,49 +59,58 @@ class FFooter extends React.Component
 
 	fgenerateGraph()
 	{
-		var x=JSON.parse(this.props.fGraphicCode);
-
-		var x_tmp=
+		var x=null;
+		try
 		{
-			title: "Untitled",
-			titlex: "Untitled X",
-			titley: "Untitled Y",
-			gridx: false,
-			gridy: false,
-			data:[]
+			x=JSON.parse(this.props.fGraphicCode);
 		}
-		console.log(x);
-		if (x.title)
-			x_tmp.title=x.title;
-		if (x.titlex)
-			x_tmp.titlex=x.titlex;
-		if (x.titley)
-			x_tmp.titley=x.titley;
-		if (x.gridx)
-			x_tmp.gridx=x.gridx;
-		if (x.gridy)
-			x_tmp.gridy=x.gridy;
-		if (x.data)
+		catch (err)
 		{
-
-			//x_tmp.data.push(x.data); // Erro aqui FATAL
-			x.data.forEach(fdata=>{
-				fdata.disabled = ((fdata.disabled==="false")?false:true);
-				x_tmp.data.push(
-					fdata
-				)
-			})
-
-			document.fApp.setState
-			(
-				{
-					fgraphics: x_tmp,
-					fStart: true
-				}
-			);
+			console.log(err.message)
 		}
-		else
-			console.log("Error on parse");
+		if (x)
+		{
+			var x_tmp=
+			{
+				title: "Untitled",
+				titlex: "Untitled X",
+				titley: "Untitled Y",
+				gridx: false,
+				gridy: false,
+				data:[]
+			}
+			if (x.title)
+				x_tmp.title=x.title;
+			if (x.titlex)
+				x_tmp.titlex=x.titlex;
+			if (x.titley)
+				x_tmp.titley=x.titley;
+			if (x.gridx)
+				x_tmp.gridx=x.gridx;
+			if (x.gridy)
+				x_tmp.gridy=x.gridy;
+			if (x.data)
+			{
+
+				//x_tmp.data.push(x.data); // Erro aqui FATAL
+				x.data.forEach(fdata=>{
+					fdata.disabled = ((fdata.disabled)?(fdata.disabled==="false")?false:true:false) //((fdata.disabled==="false")?false:true);
+					x_tmp.data.push(
+						fdata
+					)
+				})
+
+				document.fApp.setState
+				(
+					{
+						fgraphics: x_tmp,
+						fStart: true
+					}
+				);
+			}
+			else
+				console.log("Error on parse");
+		}
 	}
 }
 
@@ -311,17 +320,15 @@ ReactDOM.render(<FApp ref={(fApp) => document.fApp=fApp}/>, document.getElementB
 //ReactDOM.render(<FApp />, document.getElementById('f_graphic'));
 /*
 {
-	"title":"Titulo",
-	"titlex":"Eixo X",
-	"titley":"Eixo Y",
+	"title":"Gráfico de frutas",
+	"titlex":"Ano",
+	"titley":"Crescimento em (%)",
 	"gridx": "true",
 	"gridy": "true",
 	"data":
 	[
 		{
-			"title": "Apples",
-			"color": "#3a3",
-			"disabled": "false",
+			"title": "Maçãs",
 			"fvalues":
 			[
 				{"x":"0", "y":"0"},
@@ -340,7 +347,6 @@ ReactDOM.render(<FApp ref={(fApp) => document.fApp=fApp}/>, document.getElementB
 		{
 			"title": "Bananas",
 			"color": "#fc0",
-			"disabled": "false",
 			"fvalues":
 			[
 				{"x":"0", "y":"7"},
@@ -358,9 +364,8 @@ ReactDOM.render(<FApp ref={(fApp) => document.fApp=fApp}/>, document.getElementB
 
 		},
 		{
-			"title": "Blueberries",
+			"title": "Melancia",
 			"color": "#337",
-			"disabled": "false",
 			"fvalues":
 			[
 				{"x":"0", "y":"-7"},
@@ -374,6 +379,59 @@ ReactDOM.render(<FApp ref={(fApp) => document.fApp=fApp}/>, document.getElementB
 				{"x":"8", "y":"-1"},
 				{"x":"9", "y":"-7"},
 				{"x":"10", "y":"-2"}
+			]
+		},
+		{
+			"title": "Uva",
+			"color": "#3329",
+			"fvalues":
+			[
+				{"x":"0", "y":"71"},
+				{"x":"1", "y":"20"},
+				{"x":"2", "y":"60"},
+				{"x":"3", "y":"12"},
+				{"x":"4", "y":"14"},
+				{"x":"5", "y":"16"},
+				{"x":"6", "y":"24"},
+				{"x":"7", "y":"28"},
+				{"x":"8", "y":"-10"},
+				{"x":"9", "y":"52"},
+				{"x":"10", "y":"26"}
+			]
+		},
+		{
+			"title": "Melão",
+			"color": "#26401",
+			"fvalues":
+			[
+				{"x":"0", "y":"37"},
+				{"x":"1", "y":"29"},
+				{"x":"2", "y":"2"},
+				{"x":"3", "y":"0"},
+				{"x":"4", "y":"91"},
+				{"x":"5", "y":"78"},
+				{"x":"6", "y":"64"},
+				{"x":"7", "y":"18"},
+				{"x":"8", "y":"-25"},
+				{"x":"9", "y":"52"},
+				{"x":"10", "y":"19"}
+			]
+		},
+		{
+			"title": "Mamão",
+			"fvalues":
+			[
+				{"x":"0", "y":"72"},
+				{"x":"1", "y":"23"},
+				{"x":"2", "y":"-20"},
+				{"x":"3", "y":"1"},
+				{"x":"4", "y":"41"},
+				{"x":"5", "y":"-18"},
+				{"x":"6", "y":"24"},
+				{"x":"7", "y":"6"},
+				{"x":"8", "y":"-20"},
+				{"x":"9", "y":"12"},
+				{"x":"10", "y":"23"}
 			]
 		}
 	]
