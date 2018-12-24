@@ -1,4 +1,24 @@
 
+.f_generateChartBtn {
+	padding: 10px 20px;
+	font-size: 22px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: #fff;
+	background-color: rgb(76, 111, 175);
+	border: none;
+	border-radius: 15px;
+	box-shadow: 9px 9px #999;
+  }
+  
+.f_generateChartBtn:hover {background-color: #3e6a8e}
+  
+.f_generateChartBtn:active {
+	background-color: #3e678e;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
 .fGraphContent
 {
 	width: auto;
